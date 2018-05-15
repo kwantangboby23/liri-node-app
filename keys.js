@@ -13,16 +13,3 @@ exports.spotify ={
     secret: process.env.SPOTIFY_SECRET,
 }
 
-
-
-// if(command === "do-what-it-says"){
-    
-//     fs.readfile("random.txt", "utf8", function(err,data){
-
-//         if (err) {
-//             return console.log(err);
-
-//         }
-        
-//     })
-// }
