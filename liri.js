@@ -119,8 +119,25 @@ function doWhat(){
        command = commandArray[0];
        search = commandArray[1];
         console.log("I want to take a break");
+        dowhatIsay();
+        
 
     });
+}
+
+function dowhatIsay(search){
+    search = search;
+   
+    if (command === "my-tweets"){
+        myTweets();
+    }else if(command === "spotify-this-song"){
+        thisSong();
+    }else if(command === "movie-this"){
+        movieThis();
+    }else if(command === "do-what-it-says"){
+        console.log("I want to take a break");
+    }
+
 }
 
 function searchCommand(){
