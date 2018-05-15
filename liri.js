@@ -31,23 +31,23 @@ if (command === "my-tweets") {
 
 
 function myTweets() {
-    var client = new twitter(keys.twitter);
+    var client = new Twitter(keys.twitter);
     client.get("statuses/user_timeline", { screen_name: "gmthedeveloper", count: 20 }, function (error, tweets, response) {
-        if (err) {
-            console.log(err);
+        if(error) {
+            console.log(error);
         } else {
             if (tweets.length >= 20) {
                 console.log("_____________________________________________________________");
                 for (var i = 0; i < 20; i++) {
-                    console.log("Tweeted " + tweets[i].text + "' on " + tweets[i].created_at);  
-                    console.log("_____________________________________________________________");
+                    console.log("Tweeted " + tweets[i].text + " on " + tweets[i].created_at);  
+                    console.log("\n_____________________________________________________________");
                 }
             } else {
                 console.log("_____________________________________________________________");
                 for (var i = 0; i < tweets.length; i++) {
-                    console.log("Tweeted" + tweets[i].text + "' on " + tweets[i].created_at);  
+                    console.log("Tweeted " + tweets[i].text + " on " + tweets[i].created_at);  
                 }
-                console.log("_____________________________________________________________");
+                console.log("\n_____________________________________________________________");
             };
         };
 
@@ -64,14 +64,14 @@ function thisSong(){
 
     spotify.search({ type: 'track', query: search }).then(function(response) {
 
-    console.log("_____________________________________________________________")  
+    console.log("\n_____________________________________________________________")  
 
     console.log("Artist(s): " + response.tracks.items[0].album.artists[0].name);
     console.log("Song: " + response.tracks.items[0].name);
     console.log("Album: " + response.tracks.items[0].album.name);
     console.log("Preview Link: " + response.tracks.items[0].external_urls.spotify);
 
-    console.log("_____________________________________________________________")  
+    console.log("\n_____________________________________________________________")  
 
 
   });
@@ -90,7 +90,7 @@ function movieThis(){
             if (!error && response.statusCode === 200) {
                 var movieInfo= JSON.parse(body);
             
-                console.log("_____________________________________________________________")
+                console.log("\n_____________________________________________________________")
                 console.log("*Title: " + movieInfo.Title);
                 console.log("*Released: " + movieInfo.Year);
                 console.log("*IMDB Rating: " + movieInfo.imdbRating);
@@ -98,7 +98,7 @@ function movieThis(){
                 console.log("*Language: " + movieInfo.Language);
                 console.log("*Plot: " + movieInfo.Plot);
                 console.log("*Actors: " + movieInfo.Actors);
-                console.log("_____________________________________________________________")
+                console.log("\n_____________________________________________________________")
 
             }else{
                 console.log(error);
