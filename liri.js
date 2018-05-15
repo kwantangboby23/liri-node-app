@@ -1,7 +1,7 @@
 
 
 require("dotenv").config();
-//Set up variable
+
 var keys = require("./keys.js");
 
 var Twitter = require("twitter");
